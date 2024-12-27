@@ -44,13 +44,14 @@ $pdo = getPdo();
  * On va ici utiliser une requête préparée car elle inclue une variable qui provient de l'utilisateur : Ne faites
  * jamais confiance à ce connard d'utilisateur ! :D
  */
-$query = $pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
+// $query = $pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
 
 // On exécute la requête en précisant le paramètre :article_id 
-$query->execute(['article_id' => $article_id]);
+// $query->execute(['article_id' => $article_id]);
 
 // On fouille le résultat pour en extraire les données réelles de l'article
-$article = $query->fetch();
+// $article = $query->fetch();
+$article = findAllArticle($article_id);
 
 /**
  * 4. Récupération des commentaires de l'article en question
