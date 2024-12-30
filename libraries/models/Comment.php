@@ -1,8 +1,8 @@
 <?php
 
-require_once('libraries/database.php');
+require_once('libraries/models/Model.php');
 
-class Comment extends 
+class Comment extends Model
 {
 
     public function findAllWithArticle(int $article_id) : array {

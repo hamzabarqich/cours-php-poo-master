@@ -3,7 +3,7 @@
 require_once('libraries/database.php');
 
 class Model {
-    private $pdo;
+    protected $pdo;
 
     public function __construct()
     {
