@@ -1,8 +1,11 @@
 <?php
 
+namespace Models;
+
 require_once('libraries/database.php');
 
-class Model {
+abstract class Model 
+{
     protected $pdo;
     protected $table;
 
