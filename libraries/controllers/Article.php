@@ -3,22 +3,17 @@
 namespace Controllers;
 
 require_once('libraries/utils.php');
+require_once('libraries/controllers/Controller.php');
 require_once('libraries/models/Article.php');
 require_once('libraries/models/Comment.php');
 
 
-class Article 
+class Article extends Controller
 {
-    protected $model;
-
-    public function __construct()
-    {
-        $this->model = new \Models\Article();
-    }
+    protected $modelName = \Models\Article::class;
  
     public function index() 
     {
-
         /**
          * 2. Récupération des articles
          */
@@ -88,7 +83,7 @@ class Article
 
     public function delete() 
     {
-
+        $model = new \Models\Article();
         /**
          * 1. On vérifie que le GET possède bien un paramètre "id" (delete.php?id=202) et que c'est bien un nombre
          */
